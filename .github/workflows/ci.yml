@@ -12,7 +12,9 @@ jobs:
         with:
           swift-version: "5.5"
       - uses: actions/checkout@v2
-      - name: Build
+      - name: Build tools
+        run: make build-tools
+      - name: Run lint
         run: make lint-strict
 
   build:
