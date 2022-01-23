@@ -1,3 +1,5 @@
+BUILD_CONFIGURATION := release
+
 TOOLS_PACKAGE_PATH := Tools
 TOOLS_PATH := ${TOOLS_PACKAGE_PATH}/.build/release
 
@@ -18,3 +20,11 @@ lint-strict: lint
 .PHONY: format
 format:
 	@${TOOLS_PATH}/swift-format format --in-place --configuration .swift-format --recursive ${SWIFT_FORMAT_TARGETS}
+
+.PHONY: build
+build:
+	@swift build -c ${BUILD_CONFIGURATION}
+
+.PHONY: test
+test:
+	@swift test
