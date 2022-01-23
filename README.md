@@ -1,1 +1,1 @@
-# cbor-swift
+# CBOR.swift
